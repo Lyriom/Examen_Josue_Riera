@@ -14,7 +14,7 @@ public class JRiera
     [Range(18, 100)]
     public int Edad { get; set; }
 
-    [DataType(DataType.Currency)]
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal Salario { get; set; }
 
     [Required]
@@ -23,9 +23,9 @@ public class JRiera
     [DataType(DataType.Date)]
     public DateTime FechaRegistro { get; set; }
 
+    // Relación con Celular
     public Celular? Celular { get; set; }
 
     [ForeignKey(nameof(Celular))]
-    public int IdCelular { get; set; }
-
+    public int? IdCelular { get; set; }  // Hacemos que sea opcional para evitar restricciones
 }

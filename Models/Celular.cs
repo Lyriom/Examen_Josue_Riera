@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Examen_Josue_Riera.Models
 {
@@ -14,8 +14,7 @@ namespace Examen_Josue_Riera.Models
         [Range(2000, 2024)]
         public int Año { get; set; }
 
-        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Precio { get; set; }
-
     }
 }
